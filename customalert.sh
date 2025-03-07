@@ -3,7 +3,8 @@
 
 alertname=$1
 
-timestamp=`date +"%Y%m%dT%H%M"`
+timestamp=`date "+%Y%m%d-%H%M%S"`
+
 if [[ "$alertname" == "memberdown" ]]; then
    logline=`grep 'monitor status down' /var/log/ltm | tail -n 1`
 elif [[ "$alertname" == "pooldown" ]]; then
